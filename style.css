@@ -53,42 +53,42 @@ h3 {
     gap: 15px; /* Add space between images */
 }
 
-.images a, .game_images a {
-    position: relative; /* Ensure the tooltip is positioned relative to the link */
-    display: inline-block;
-}
+    .images a, .game_images a {
+        position: relative; /* Ensure the tooltip is positioned relative to the link */
+        display: inline-block;
+    }
 
-/* Tooltip styles */
-.images a:hover::after, .game_images a:hover::after {
-    content: attr(data-alt); /* Access the data-alt attribute */
-    position: absolute; /* Position the tooltip absolutely */
-    bottom: -30px; /* Position the tooltip below the image */
-    left: 50%; /* Center the tooltip horizontally */
-    transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.8); /* Dark background for the tooltip */
-    color: white; /* White text for the tooltip */
-    padding: 5px 10px;
-    border-radius: 5px; /* Optional: Add rounded corners */
-    white-space: nowrap; /* Prevent text wrapping */
-    font-size: 0.9rem;
-    z-index: 10;
-    opacity: 1;
-    visibility: visible;
-    pointer-events: none; /* Prevent the tooltip from interfering with hover */
-    transition: opacity 0.2s ease-in-out;
-}
+        /* Tooltip styles */
+        .images a:hover::after, .game_images a:hover::after {
+            content: attr(data-alt); /* Access the data-alt attribute */
+            position: absolute; /* Position the tooltip absolutely */
+            bottom: -30px; /* Position the tooltip below the image */
+            left: 50%; /* Center the tooltip horizontally */
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.8); /* Dark background for the tooltip */
+            color: white; /* White text for the tooltip */
+            padding: 5px 10px;
+            border-radius: 5px; /* Optional: Add rounded corners */
+            white-space: nowrap; /* Prevent text wrapping */
+            font-size: 0.9rem;
+            z-index: 10;
+            opacity: 1;
+            visibility: visible;
+            pointer-events: none; /* Prevent the tooltip from interfering with hover */
+            transition: opacity 0.2s ease-in-out;
+        }
 
-.images a::after, .game_images a::after {
-    content: attr(data-alt); /* Access the data-alt attribute */
-    position: absolute; /* Ensure the tooltip is out of the document flow */
-    bottom: -30px; /* Keep the tooltip below the image */
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none; /* Prevent interaction with the tooltip */
-    transition: opacity 0.2s ease-in-out;
-}
+        .images a::after, .game_images a::after {
+            content: attr(data-alt); /* Access the data-alt attribute */
+            position: absolute; /* Ensure the tooltip is out of the document flow */
+            bottom: -30px; /* Keep the tooltip below the image */
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none; /* Prevent interaction with the tooltip */
+            transition: opacity 0.2s ease-in-out;
+        }
 
 footer {
     background-color: #333;
@@ -105,11 +105,11 @@ main {
     margin: 0; /* Remove any extra margin */
 }
 
-main::after {
-    content: "";
-    display: block;
-    clear: both;
-}
+    main::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
 
 /* Apply box-sizing globally */
 * {
