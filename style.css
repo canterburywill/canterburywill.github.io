@@ -1,6 +1,7 @@
 /* Apply the gradient background to the body */
 body {
-    background: linear-gradient(0deg, rgba(51, 51, 51, 1) 0%, rgba(19, 115, 232, 1) 100%);
+    background: background: #202075;
+    background: linear-gradient(320deg,rgba(32, 32, 117, 1) 0%, rgba(19, 115, 232, 1) 100%);
     margin: 0;
     padding: 0;
     color: white; /* Ensure text is visible on the gradient */
@@ -16,7 +17,6 @@ body {
     width: 100%; /* Full width */
     margin: 0; /* Remove any default margin */
     box-sizing: border-box; /* Include padding in width calculation */
-    border-bottom: 8px solid #333; /* Keep the border between sections */
 }
 
 /* Other styles remain unchanged */
