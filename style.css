@@ -131,3 +131,16 @@ img {
     max-width: 100%; /* Makes images responsive */
     height: auto;
 }
+.shows-images-container {
+    display: flex; /* Enable Flexbox */
+    flex-wrap: wrap; /* Allow images to wrap to the next row */
+    justify-content: center; /* Center images horizontally */
+    gap: 15px; /* Add spacing between images */
+}
+
+.shows-images-container img {
+    max-width: 150px; /* Adjust image size */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px; /* Optional: Add rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
+}
