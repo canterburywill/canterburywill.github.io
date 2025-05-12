@@ -31,9 +31,21 @@ h3 {
     position: relative; /* Allow positioning within the section */
     top: 0; /* Position it at the top of the section */
 }
+.images img {
+    max-width: 150px; /* Default size for regular images */
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
+.images img.enlarged {
+    max-width: 250px; /* Larger size for specific images */
+    height: auto;
+    border-radius: 8px; /* Optional: Slightly larger border radius */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Optional: More prominent shadow */
+}
 /* Shared styles for images */
-.images img, .enlarged_images img {
+.enlarged_images img {
     max-width: 150px; /* Adjust the size of the images */
     height: auto; /* Maintain aspect ratio */
     border-radius: 5px; /* Optional: Add rounded corners */
