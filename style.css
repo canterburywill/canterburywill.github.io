@@ -33,7 +33,7 @@ h3 {
 }
 
 /* Shared styles for images */
-.images img, .game_images img {
+.images img, .enlarged_images img {
     max-width: 150px; /* Adjust the size of the images */
     height: auto; /* Maintain aspect ratio */
     border-radius: 5px; /* Optional: Add rounded corners */
@@ -45,7 +45,7 @@ h3 {
 }
 
 /* Flexbox layout for image containers */
-.images, .game_images {
+.images, .enlarged_images {
     margin-top: 20px; /* Add space between the header and the images */
     display: flex; /* Use flexbox for layout */
     flex-wrap: wrap; /* Allow images to wrap into multiple rows */
@@ -53,13 +53,13 @@ h3 {
     gap: 15px; /* Add space between images */
 }
 
-    .images a, .game_images a {
+    .images a, .enlarged_images a {
         position: relative; /* Ensure the tooltip is positioned relative to the link */
         display: inline-block;
     }
 
         /* Tooltip styles */
-        .images a:hover::after, .game_images a:hover::after {
+        .images a:hover::after, .enlarged_images a:hover::after {
             content: attr(data-alt); /* Access the data-alt attribute */
             position: absolute; /* Position the tooltip absolutely */
             bottom: -30px; /* Position the tooltip below the image */
@@ -78,7 +78,7 @@ h3 {
             transition: opacity 0.2s ease-in-out;
         }
 
-        .images a::after, .game_images a::after {
+        .images a::after, .enlarged_images a::after {
             content: attr(data-alt); /* Access the data-alt attribute */
             position: absolute; /* Ensure the tooltip is out of the document flow */
             bottom: -30px; /* Keep the tooltip below the image */
