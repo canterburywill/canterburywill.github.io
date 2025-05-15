@@ -74,7 +74,7 @@ h3 {
 .images a img, .enlarged_images a img {
     display: block; /* Removes extra space below inline images */
     filter: grayscale(0%); /* Start with no grayscale */
-    transition: filter 0.3s ease-in-out; /* Animate the filter property */
+    transition: filter 0.2s ease-in-out; /* Animate the filter property */
 }
 
 /* Apply grayscale to the image when the parent 'a' tag is hovered */
@@ -96,7 +96,7 @@ h3 {
     border-radius: 5px; /* Rounded corners */
     white-space: nowrap; /* Prevent text wrapping in the tooltip */
     font-size: 0.9rem;
-    z-index: 10; /* Ensures tooltip is on top of the image within this 'a' tag */
+    z-index: 1; /* Ensures tooltip is on top of the image within this 'a' tag */
     opacity: 0; /* Hidden by default */
     visibility: hidden; /* Hidden by default and not accessible */
     pointer-events: none; /* Prevent the tooltip from interfering with mouse events on elements below it */
