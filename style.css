@@ -87,8 +87,11 @@ h3 {
             opacity: 1;
             visibility: visible;
             pointer-events: none; /* Prevent the tooltip from interfering with hover */
-            transition: opacity 0.2s ease-in-out;
+            transition: filter 0.3s ease-in-out;
+            filter: grayscale(100%);
+            
         }
+}
 
         .images a::after, .enlarged_images a::after {
             content: attr(data-alt); /* Access the data-alt attribute */
