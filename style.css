@@ -58,61 +58,65 @@ h3 {
 
 /* Flexbox layout for image containers */
 .images, .enlarged_images {
-    margin-top: 20px; /* Add space between the header and the images */
-    display: flex; /* Use flexbox for layout */
-    flex-wrap: wrap; /* Allow images to wrap into multiple rows */
-    justify-content: center; /* Center the images horizontally */
-    gap: 15px; /* Add space between images */
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
 }
 
 .images a, .enlarged_images a {
-    position: relative; /* Crucial for ::after positioning and stacking context */
-    display: inline-block; /* Behaves like an inline element but can have width/height */
+    position: relative; /* Crucial for ::after positioning and its own stacking context */
+    display: inline-block;
+    z-index: 1; /* Default stacking order for each link */
+    /* Optional: transition for z-index if needed, though often not necessary as it's instant */
+    /* transition: z-index 0s linear 0.3s; */
+}
+
+/* When a link is hovered, bring it to the front */
+.images a:hover, .enlarged_images a:hover {
+    z-index: 20; /* Higher z-index to bring the entire hovered 'a' tag (and its ::after) forward */
+    /* transition: z-index 0s linear 0s; */
 }
 
 /* Styles for the image itself */
 .images a img, .enlarged_images a img {
-    display: block; /* Removes extra space below inline images */
-    filter: grayscale(0%); /* Start with no grayscale */
-    transition: filter 0.2s ease-in-out; /* Animate the filter property */
+    display: block;
+    filter: grayscale(0%);
+    transition: filter 0.3s ease-in-out;
 }
 
-/* Apply grayscale to the image when the parent 'a' tag is hovered */
 .images a:hover img, .enlarged_images a:hover img {
-    filter: grayscale(100%); /* Makes the image completely grayscale on hover */
+    filter: grayscale(100%);
 }
 
 /* Base tooltip styles (initially hidden) */
 .images a::after, .enlarged_images a::after {
-    content: attr(data-alt); /* Access the data-alt attribute for tooltip text */
-    position: absolute; /* Position the tooltip relative to the 'a' tag */
-    bottom: calc(100% + 5px); /* Position the tooltip above the image (adjust 5px as needed for spacing) */
-    /* Or, to keep it below: bottom: -35px; (adjust as needed) */
-    left: 50%; /* Center the tooltip horizontally */
-    transform: translateX(-50%); /* Fine-tune horizontal centering */
-    background-color: rgba(0, 0, 0, 0.85); /* Dark background for the tooltip */
-    color: white; /* White text for the tooltip */
-    padding: 8px 12px; /* Padding inside the tooltip */
-    border-radius: 5px; /* Rounded corners */
-    white-space: nowrap; /* Prevent text wrapping in the tooltip */
+    content: attr(data-alt);
+    position: absolute;
+    bottom: calc(100% + 5px); /* Position above the image, adjust 5px for spacing */
+    /* Or, to keep it below: top: calc(100% + 5px); */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.85);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    white-space: nowrap;
     font-size: 0.9rem;
-    z-index: 1; /* Ensures tooltip is on top of the image within this 'a' tag */
-    opacity: 0; /* Hidden by default */
-    visibility: hidden; /* Hidden by default and not accessible */
-    pointer-events: none; /* Prevent the tooltip from interfering with mouse events on elements below it */
-    /* Transition for fade-in/out effect */
-    /* Visibility changes slightly after opacity to ensure smooth fade-out before becoming non-interactive */
+    z-index: 10; /* Ensures tooltip is on top of the image WITHIN THIS 'a' tag */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
     transition: opacity 0.2s ease-in-out, visibility 0s linear 0.2s;
 }
 
 /* Tooltip styles on hover (make it visible) */
 .images a:hover::after, .enlarged_images a:hover::after {
-    opacity: 1; /* Make tooltip visible */
-    visibility: visible; /* Make tooltip accessible */
-    /* Ensure visibility changes immediately when fading in */
+    opacity: 1;
+    visibility: visible;
     transition: opacity 0.2s ease-in-out, visibility 0s linear 0s;
-    /* Optional delay before tooltip appears on hover */
-    /* transition-delay: 0.1s; */
+    /* transition-delay: 0.1s; */ /* Optional delay for tooltip appearance */
 }
 footer {
     background-color: #333;
