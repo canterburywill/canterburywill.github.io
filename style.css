@@ -89,11 +89,9 @@ h3 {
             pointer-events: none; /* Prevent the tooltip from interfering with hover */
             
         }
-.images, .enlarged_images {
-  transition: filter 0.3s ease-in-out;
-}
 
 .images :hover, .enlarged_images :hover{
+  transition: filter 0.3s ease-in-out;
   filter: grayscale(100%); /* Makes the image completely grayscale */
   /* Other examples:
      filter: blur(5px);
