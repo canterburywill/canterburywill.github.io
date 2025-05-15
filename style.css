@@ -65,54 +65,55 @@ h3 {
     gap: 15px; /* Add space between images */
 }
 
-    .images a, .enlarged_images a {
-        position: relative; /* Ensure the tooltip is positioned relative to the link */
-        display: inline-block;
-    }
-
-        /* Tooltip styles */
-        .images a:hover::after, .enlarged_images a:hover::after {
-            content: attr(data-alt); /* Access the data-alt attribute */
-            position: absolute; /* Position the tooltip absolutely */
-            bottom: -30px; /* Position the tooltip below the image */
-            left: 50%; /* Center the tooltip horizontally */
-            transform: translateX(-50%);
-            background-color: rgba(0, 0, 0, 0.8); /* Dark background for the tooltip */
-            color: white; /* White text for the tooltip */
-            padding: 5px 10px;
-            border-radius: 5px; /* Optional: Add rounded corners */
-            white-space: nowrap; /* Prevent text wrapping */
-            font-size: 0.9rem;
-            z-index: 10;
-            opacity: 1;
-            visibility: visible;
-            pointer-events: none; /* Prevent the tooltip from interfering with hover */
-            
-        }
-
-.images :hover, .enlarged_images :hover{
-  transition: filter 0.3s ease-in-out;
-  filter: grayscale(100%); /* Makes the image completely grayscale */
-  /* Other examples:
-     filter: blur(5px);
-     filter: brightness(150%);
-     filter: sepia(100%);
-  */
-}
+.images a, .enlarged_images a {
+    position: relative; /* Crucial for ::after positioning and stacking context */
+    display: inline-block; /* Behaves like an inline element but can have width/height */
 }
 
-        .images a::after, .enlarged_images a::after {
-            content: attr(data-alt); /* Access the data-alt attribute */
-            position: absolute; /* Ensure the tooltip is out of the document flow */
-            bottom: -30px; /* Keep the tooltip below the image */
-            left: 50%;
-            transform: translateX(-50%);
-            opacity: 0;
-            visibility: hidden;
-            pointer-events: none; /* Prevent interaction with the tooltip */
-            transition: opacity 0.2s ease-in-out;
-        }
+/* Styles for the image itself */
+.images a img, .enlarged_images a img {
+    display: block; /* Removes extra space below inline images */
+    filter: grayscale(0%); /* Start with no grayscale */
+    transition: filter 0.3s ease-in-out; /* Animate the filter property */
+}
 
+/* Apply grayscale to the image when the parent 'a' tag is hovered */
+.images a:hover img, .enlarged_images a:hover img {
+    filter: grayscale(100%); /* Makes the image completely grayscale on hover */
+}
+
+/* Base tooltip styles (initially hidden) */
+.images a::after, .enlarged_images a::after {
+    content: attr(data-alt); /* Access the data-alt attribute for tooltip text */
+    position: absolute; /* Position the tooltip relative to the 'a' tag */
+    bottom: calc(100% + 5px); /* Position the tooltip above the image (adjust 5px as needed for spacing) */
+    /* Or, to keep it below: bottom: -35px; (adjust as needed) */
+    left: 50%; /* Center the tooltip horizontally */
+    transform: translateX(-50%); /* Fine-tune horizontal centering */
+    background-color: rgba(0, 0, 0, 0.85); /* Dark background for the tooltip */
+    color: white; /* White text for the tooltip */
+    padding: 8px 12px; /* Padding inside the tooltip */
+    border-radius: 5px; /* Rounded corners */
+    white-space: nowrap; /* Prevent text wrapping in the tooltip */
+    font-size: 0.9rem;
+    z-index: 10; /* Ensures tooltip is on top of the image within this 'a' tag */
+    opacity: 0; /* Hidden by default */
+    visibility: hidden; /* Hidden by default and not accessible */
+    pointer-events: none; /* Prevent the tooltip from interfering with mouse events on elements below it */
+    /* Transition for fade-in/out effect */
+    /* Visibility changes slightly after opacity to ensure smooth fade-out before becoming non-interactive */
+    transition: opacity 0.2s ease-in-out, visibility 0s linear 0.2s;
+}
+
+/* Tooltip styles on hover (make it visible) */
+.images a:hover::after, .enlarged_images a:hover::after {
+    opacity: 1; /* Make tooltip visible */
+    visibility: visible; /* Make tooltip accessible */
+    /* Ensure visibility changes immediately when fading in */
+    transition: opacity 0.2s ease-in-out, visibility 0s linear 0s;
+    /* Optional delay before tooltip appears on hover */
+    /* transition-delay: 0.1s; */
+}
 footer {
     background-color: #333;
     color: white;
