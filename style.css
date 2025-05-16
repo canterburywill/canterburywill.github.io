@@ -1,11 +1,11 @@
 /* Apply the gradient background to the body */
 body {
-    background: background: #202075;
     background: linear-gradient(320deg,rgba(32, 32, 117, 1) 0%, rgba(19, 115, 232, 1) 100%);
     margin: 0;
     padding: 0;
     color: white; /* Ensure text is visible on the gradient */
     font-family: Arial, sans-serif; /* Optional: Set a default font */
+    overflow-x: hidden;
 }
 
 /* Remove individual section backgrounds */
