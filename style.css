@@ -94,7 +94,7 @@ h3 {
 .images a::after, .enlarged_images a::after {
     content: attr(data-alt);
     position: absolute;
-    top: calc(100% + 5px);
+    bottom: calc(100% + 5px);
     left: 50%;
     transform: translateX(-50%);
     background-color: rgba(0, 0, 0, 0.85);
