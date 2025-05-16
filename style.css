@@ -83,7 +83,7 @@ h3 {
 .images a img, .enlarged_images a img {
     display: block;
     filter: grayscale(0%);
-    transition: filter 0.3s ease-in-out;
+    transition: filter 0.1s ease-in-out;
 }
 
 .images a:hover img, .enlarged_images a:hover img {
@@ -94,8 +94,7 @@ h3 {
 .images a::after, .enlarged_images a::after {
     content: attr(data-alt);
     position: absolute;
-    bottom: calc(100% + 5px); /* Position above the image, adjust 5px for spacing */
-    /* Or, to keep it below: top: calc(100% + 5px); */
+    top: calc(100% + 5px);
     left: 50%;
     transform: translateX(-50%);
     background-color: rgba(0, 0, 0, 0.85);
