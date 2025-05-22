@@ -15,13 +15,11 @@ body {
   cursor: pointer;
 }
 .folder-icon img.folder-img {
-  width: 40px;
+  width: 100px;
   height: auto;
   transition: filter 0.2s;
 }
-.folder-icon:focus {
-  outline: 2px solid #333;
-}
+
 /* Remove individual section backgrounds */
 .music, .movies, .shows, .games {
     background: none; /* Remove background from sections */
