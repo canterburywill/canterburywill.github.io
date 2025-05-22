@@ -23,7 +23,7 @@ body {
 /* Remove individual section backgrounds */
 .music, .movies, .shows, .games {
     background: none; /* Remove background from sections */
-    padding: 20px; /* Keep padding for content spacing */
+    padding: 1px; /* Keep padding for content spacing */
     color: black; /* Adjust text color if needed */
     text-align: center; /* Center-align the content */
     width: 100%; /* Full width */
