@@ -198,7 +198,7 @@ img {
     /* Set max-height to a value large enough to show all its content. */
     /* Adjust this value based on the maximum expected height of your content. */
     /* Using CSS variables or JS for dynamic height is more advanced. */
-    max-height: 2000px;     /* Example: Can be a large number like 50vh or 100vh too */
+    max-height: 4000px;     /* Example: Can be a large number like 50vh or 100vh too */
     
     /* Add padding when open so content isn't squished */
     padding-top: 15px;      /* Example padding */
