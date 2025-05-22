@@ -26,6 +26,7 @@ body {
   width: 20px;   /* adjust the hotspot width */
   height: 20px;  /* adjust the hotspot height */
   cursor: pointer;
+  z-index: 2;
   /* Optional: background: rgba(255,0,0,0.1); for debugging */
 }
 
