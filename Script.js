@@ -40,28 +40,29 @@ document.querySelectorAll('section').forEach(section => {
 
 document.querySelectorAll('section').forEach(section => {
   const folderIcon = section.querySelector('.folder-icon img');
+  const hotspot = section.querySelector('.folder-hotspot');
   const header = section.querySelector('h3'); // or your header selector
   const content = section.querySelector('.section-content');
 
-  if (folderIcon && header && content) {
+  if (folderIcon && header && content && hotspot) {
     // Hover image swap
-    folderIcon.addEventListener('mouseenter', () => {
+    hotspot.addEventListener('mouseenter', () => {
       folderIcon.src = folderIcon.dataset.hover;
     });
-    folderIcon.addEventListener('mouseleave', () => {
+    hotspot.addEventListener('mouseleave', () => {
       folderIcon.src = folderIcon.dataset.normal;
     });
 
     // Toggle dropdown on click
-    folderIcon.addEventListener('click', () => {
+    hotspot.addEventListener('click', () => {
       content.classList.toggle('open');
       section.classList.toggle('collapsed', !content.classList.contains('open'));
     });
     // (Optional) Keyboard accessibility
-    folderIcon.parentElement.addEventListener('keydown', e => {
+    hotspot.parentElement.addEventListener('keydown', e => {
       if (e.key === "Enter" || e.key === " ") {
         e.preventDefault();
-        folderIcon.click();
+        hotspot.click();
       }
     });
   }
