@@ -8,7 +8,20 @@ body {
     overflow-x: hidden;
     min-height: 100vh;
 }
-
+.folder-icon {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.5em;
+  cursor: pointer;
+}
+.folder-icon img.folder-img {
+  width: 40px;
+  height: auto;
+  transition: filter 0.2s;
+}
+.folder-icon:focus {
+  outline: 2px solid #333;
+}
 /* Remove individual section backgrounds */
 .music, .movies, .shows, .games {
     background: none; /* Remove background from sections */
