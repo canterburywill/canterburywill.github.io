@@ -31,8 +31,8 @@ body {
 }
 
 /* Only change the image filter when hovering the hotspot */
-.folder-icon .hover-hotspot:hover ~ .folder-img,
-.folder-icon .hover-hotspot:focus ~ .folder-img {
+.folder-icon .folder-hotspot:hover ~ .folder-img,
+.folder-icon .folder-hotspot:focus ~ .folder-img {
   filter: grayscale(100%); /* or your desired effect */
 }
 
