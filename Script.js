@@ -2,12 +2,29 @@
 // Example: Log a message to the browser console when the page loads
 console.log("Website loaded!");
 
-// Example: Add a simple interactive feature
-//const heading = document.querySelector('h1');
-//heading.addEventListener('mouseover', function () {
-    //heading.style.color = 'lightblue';
-//});
-
-heading.addEventListener('mouseout', function () {
-    heading.style.color = 'white'; // Change it back
+<script>
+document.querySelectorAll('section').forEach(section => {
+  const header = section.querySelector('h3');
+  const content = section.querySelector('.section-content');
+  if (header && content) {
+    // Start collapsed (optional)
+    content.style.display = 'none';
+    // Make header look clickable
+    header.style.cursor = 'pointer';
+    // Add click listener
+    header.addEventListener('click', () => {
+      // Toggle visibility
+      if (content.style.display === 'none') {
+        content.style.display = 'block';
+      } else {
+        content.style.display = 'none';
+      }
+    });
+  }
+});
+</script>
+header.addEventListener('click', () => {
+  const isHidden = content.style.display === 'none';
+  content.style.display = isHidden ? 'block' : 'none';
+  section.classList.toggle('collapsed', !isHidden);
 });
