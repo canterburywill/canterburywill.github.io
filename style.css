@@ -6,6 +6,7 @@ body {
     color: white; /* Ensure text is visible on the gradient */
     font-family: Arial, sans-serif; /* Optional: Set a default font */
     overflow-x: hidden;
+    min-height: 100vh;
 }
 
 /* Remove individual section backgrounds */
