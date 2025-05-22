@@ -172,3 +172,35 @@ img {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
 }
 
+/* Styles for the content that will expand/collapse */
+.section-content {
+    max-height: 0;          /* Start collapsed - CRUCIAL for animation */
+    opacity: 0;             /* Start invisible - for fade effect */
+    overflow: hidden;       /* Hide content that overflows max-height */
+    
+    /* Define the transition for multiple properties */
+    transition: 
+        max-height 0.35s cubic-bezier(0.25, 0.1, 0.25, 1), /* Smooth easing for height */
+        opacity 0.3s ease-out,                         /* Fade effect */
+        padding-top 0.35s ease-out,                    /* Animate padding */
+        padding-bottom 0.35s ease-out;                 /* Animate padding */
+    
+    /* Padding will be 0 when collapsed, and have a value when open */
+    padding-top: 0;
+    padding-bottom: 0;
+    /* border-top: 1px solid transparent; */ /* Optional: if you want a border that fades in */
+}
+
+.section-content.open {
+    opacity: 1;             /* Fade in to full visibility */
+    
+    /* Set max-height to a value large enough to show all its content. */
+    /* Adjust this value based on the maximum expected height of your content. */
+    /* Using CSS variables or JS for dynamic height is more advanced. */
+    max-height: 1000px;     /* Example: Can be a large number like 50vh or 100vh too */
+    
+    /* Add padding when open so content isn't squished */
+    padding-top: 15px;      /* Example padding */
+    padding-bottom: 15px;     /* Example padding */
+    /* border-top: 1px solid #eee; */ /* Optional: fade in a separator border */
+}
