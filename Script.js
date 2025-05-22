@@ -37,3 +37,32 @@ document.querySelectorAll('section').forEach(section => {
 
   }
 });
+
+document.querySelectorAll('section').forEach(section => {
+  const folderIcon = section.querySelector('.folder-icon img');
+  const header = section.querySelector('h3'); // or your header selector
+  const content = section.querySelector('.section-content');
+
+  if (folderIcon && header && content) {
+    // Hover image swap
+    folderIcon.addEventListener('mouseenter', () => {
+      folderIcon.src = folderIcon.dataset.hover;
+    });
+    folderIcon.addEventListener('mouseleave', () => {
+      folderIcon.src = folderIcon.dataset.normal;
+    });
+
+    // Toggle dropdown on click
+    folderIcon.addEventListener('click', () => {
+      content.classList.toggle('open');
+      section.classList.toggle('collapsed', !content.classList.contains('open'));
+    });
+    // (Optional) Keyboard accessibility
+    folderIcon.parentElement.addEventListener('keydown', e => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        folderIcon.click();
+      }
+    });
+  }
+});
