@@ -27,7 +27,7 @@ body {
   height: 20px;  /* adjust the hotspot height */
   cursor: pointer;
   z-index: 2;
-  /* Optional: background: rgba(255,0,0,0.1); for debugging */
+  background: rgba(255,0,0,0.1);
 }
 
 /* Only change the image filter when hovering the hotspot */
