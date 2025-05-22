@@ -12,9 +12,8 @@ document.querySelectorAll('section').forEach(section => {
     header.style.cursor = 'pointer';
     // Add click listener
     header.addEventListener('click', () => {
-      const isHidden = content.style.display === 'none';
-      content.style.display = isHidden ? 'block' : 'none';
-      section.classList.toggle('collapsed', !isHidden);
+      content.classList.toggle('open');
+      section.classList.toggle('collapsed', !content.classList.contains('open'));
     });
   }
 });
