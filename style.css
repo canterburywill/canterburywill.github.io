@@ -15,7 +15,7 @@ body {
   cursor: pointer;
 }
 .folder-icon img.folder-img {
-  width: 200px;
+  width: 300px;
   height: auto;
   transition: filter 0.2s;
 }
@@ -23,7 +23,7 @@ body {
 /* Remove individual section backgrounds */
 .music, .movies, .shows, .games {
     background: none; /* Remove background from sections */
-    padding: 1px; /* Keep padding for content spacing */
+    padding: 50px; /* Keep padding for content spacing */
     color: black; /* Adjust text color if needed */
     text-align: center; /* Center-align the content */
     width: 100%; /* Full width */
@@ -40,6 +40,7 @@ h3 {
     display: inline-block; /* Ensure the background wraps tightly around the text */
     border-radius: 5px; /* Optional: Add rounded corners */
     margin: 0 auto; /* Center the header horizontally */
+    margin-top: 0;
     position: relative; /* Allow positioning within the section */
     top: 0; /* Position it at the top of the section */
 }
