@@ -20,6 +20,22 @@ body {
   transition: filter 0.2s;
 }
 
+.hover-hotspot {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;   /* adjust the hotspot width */
+  height: 60px;  /* adjust the hotspot height */
+  cursor: pointer;
+  /* Optional: background: rgba(255,0,0,0.1); for debugging */
+}
+
+/* Only change the image filter when hovering the hotspot */
+.folder-icon .hover-hotspot:hover ~ .folder-img,
+.folder-icon .hover-hotspot:focus ~ .folder-img {
+  filter: grayscale(100%); /* or your desired effect */
+}
+
 /* Remove individual section backgrounds */
 .music, .movies, .shows, .games {
     background: none; /* Remove background from sections */
