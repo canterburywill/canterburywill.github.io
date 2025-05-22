@@ -11,7 +11,7 @@ body {
 .folder-icon {
   display: flex;
   justify-content: center;
-  margin-bottom: 0.1em;
+  margin-bottom: 0px;
   cursor: pointer;
 }
 .folder-icon img.folder-img {
@@ -23,7 +23,7 @@ body {
 /* Remove individual section backgrounds */
 .music, .movies, .shows, .games {
     background: none; /* Remove background from sections */
-    padding: 50px; /* Keep padding for content spacing */
+    padding: 20px; /* Keep padding for content spacing */
     color: black; /* Adjust text color if needed */
     text-align: center; /* Center-align the content */
     width: 100%; /* Full width */
