@@ -171,3 +171,17 @@ img {
     border-radius: 5px; /* Optional: Add rounded corners */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
 }
+.section-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0.4,0,0.2,1);
+  /* Optional: fade effect */
+  opacity: 0;
+  transition-property: max-height, opacity;
+  transition-duration: 0.5s;
+}
+
+.section-content.open {
+  max-height: 2000px; /* Large enough for your content */
+  opacity: 1;
+}
