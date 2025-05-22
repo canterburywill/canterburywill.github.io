@@ -3,17 +3,37 @@
 console.log("Website loaded!");
 
 document.querySelectorAll('section').forEach(section => {
-  const header = section.querySelector('h3');
-  const content = section.querySelector('.section-content');
+  // IMPORTANT: Ensure these selectors match your HTML structure.
+  // If your headers are <h2> with class "section-title", use:
+  // const header = section.querySelector('h2.section-title');
+  const header = section.querySelector('h3'); // Your current selector
+  
+  // Ensure your collapsible content is wrapped in a div with class "section-content"
+  const content = section.querySelector('.section-content'); 
+
   if (header && content) {
-    // Start collapsed
-    content.style.display = 'none';
+    // REMOVE THIS LINE: content.style.display = 'none';
+    // CSS will now handle the initial collapsed state for animation.
+
     // Make header look clickable
     header.style.cursor = 'pointer';
+
     // Add click listener
     header.addEventListener('click', () => {
-      content.classList.toggle('open');
+      // Toggle the .open class on the content div. CSS will use this for animation.
+      content.classList.toggle('open'); 
+      
+      // Toggle .collapsed class on the parent section. Useful for styling the header (e.g., arrow).
       section.classList.toggle('collapsed', !content.classList.contains('open'));
     });
+
+    // Ensure the section starts with the 'collapsed' class if its content is not 'open'.
+    // This helps if you have JavaScript-independent arrow styling.
+    if (!content.classList.contains('open')) {
+      section.classList.add('collapsed');
+    } else {
+      section.classList.remove('collapsed'); // Unlikely needed if .open isn't there by default
+    }
+
   }
 });
