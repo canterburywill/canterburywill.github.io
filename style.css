@@ -11,7 +11,7 @@ body {
 .folder-icon {
   display: flex;
   justify-content: center;
-  margin-bottom: -1em;
+  margin-bottom: -20em;
   cursor: pointer;
 }
 .folder-icon img.folder-img {
