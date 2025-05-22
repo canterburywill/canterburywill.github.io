@@ -12,7 +12,6 @@ body {
   display: flex;
   justify-content: center;
   margin-bottom: -3em;
-  cursor: pointer;
 }
 .folder-icon img.folder-img {
   width: 300px;
@@ -24,8 +23,8 @@ body {
   position: absolute;
   top: 50%; left: 50%;
   transform: translate(-50%, -50%);
-  width: 40px;   /* adjust the hotspot width */
-  height: 40px;  /* adjust the hotspot height */
+  width: 20px;   /* adjust the hotspot width */
+  height: 20px;  /* adjust the hotspot height */
   cursor: pointer;
   /* Optional: background: rgba(255,0,0,0.1); for debugging */
 }
