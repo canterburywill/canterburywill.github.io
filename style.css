@@ -37,7 +37,7 @@ body {
 }
 
 /* Remove individual section backgrounds */
-.music, .movies, .shows, .games, .video essays {
+.music, .movies, .shows, .games, .video_essays {
     background: none; /* Remove background from sections */
     padding: 20px; /* Keep padding for content spacing */
     color: black; /* Adjust text color if needed */
